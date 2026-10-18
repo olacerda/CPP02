@@ -6,11 +6,11 @@
 #    By: otlacerd <otlacerd@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/09/27 00:56:27 by otlacerd          #+#    #+#              #
-#    Updated: 2026/09/27 00:56:56 by otlacerd         ###   ########.fr        #
+#    Updated: 2026/10/18 19:59:30 by otlacerd         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = orthodox
+NAME = more_useful
 
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98

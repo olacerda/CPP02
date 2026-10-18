@@ -6,7 +6,7 @@
 /*   By: otlacerd <otlacerd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/26 00:25:00 by olacerda          #+#    #+#             */
-/*   Updated: 2026/09/27 02:25:35 by otlacerd         ###   ########.fr       */
+/*   Updated: 2026/10/18 19:32:05 by otlacerd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,19 +15,21 @@
 
 const int Fixed::frac_bits = 8;
 
-Fixed::Fixed() {};
+Fixed::Fixed()
+{
+	std::cout << "Default constructor called" << std::endl;
+};
 
-Fixed::Fixed(const int a)
+Fixed::Fixed(const int& a)
 {	
 	this->value = a << this->frac_bits;
-	std::cout << "Default constructor called" << std::endl;
+	std::cout << "Int constructor called" << std::endl;
 }
 
-Fixed::Fixed(const float a)
+Fixed::Fixed(const float& a)
 {	
-	this->value = roundf(a);
-	// this->value = static_cast<int>(a * (1 << this->frac_bits) + 0.5);
-	std::cout << "Default constructor called" << std::endl;
+	this->value = roundf(a * (1 << this->frac_bits));
+	std::cout << "Float constructor called" << std::endl;
 }
 
 Fixed::~Fixed()
@@ -64,7 +66,13 @@ float Fixed::toFloat(void) const
 	return 	static_cast<float>(this->value) / (1 << this->frac_bits);
 }
 
-int	Fixed::toInt(void)
+int	Fixed::toInt(void) const
 {
-	return static_cast<int>(this->value);
+	return this->value / (1 << this->frac_bits);
+}
+
+std::ostream& operator<<(std::ostream& a, const Fixed& b)
+{
+	a << b.toFloat();
+	return a;
 }
