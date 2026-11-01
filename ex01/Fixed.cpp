@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: otlacerd <otlacerd@student.42.fr>          +#+  +:+       +#+        */
+/*   By: olacerda <olacerda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/26 00:25:00 by olacerda          #+#    #+#             */
-/*   Updated: 2026/10/18 19:32:05 by otlacerd         ###   ########.fr       */
+/*   Updated: 2026/10/30 19:50:48 by olacerda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ const int Fixed::frac_bits = 8;
 
 Fixed::Fixed()
 {
+	this->value = 0;
 	std::cout << "Default constructor called" << std::endl;
 };
 
