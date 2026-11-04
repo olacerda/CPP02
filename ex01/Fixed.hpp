@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: otlacerd <otlacerd@student.42.fr>          +#+  +:+       +#+        */
+/*   By: olacerda <olacerda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/26 00:25:09 by olacerda          #+#    #+#             */
-/*   Updated: 2026/10/18 20:09:16 by otlacerd         ###   ########.fr       */
+/*   Updated: 2026/11/04 03:46:17 by olacerda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FIXED_HPP
 # define FIXED_HPP
 
-#include <iostream>
-
+# include <iostream>
+# include <cmath>
 class Fixed
 {
 	private:
@@ -23,11 +23,12 @@ class Fixed
 
 	public:
 		Fixed();
-		Fixed(const int& a);
-		Fixed(const float& a);
 		~Fixed();
 		Fixed(const Fixed& other);
-		Fixed&				operator=(const Fixed& object);	
+		Fixed&				operator=(const Fixed& object);
+
+		Fixed(const int& a);
+		Fixed(const float& a);
 		int					getRawBits(void) const;
 		void				setRawBits(int const raw);
 		float				toFloat(void) const;
